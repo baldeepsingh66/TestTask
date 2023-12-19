@@ -1,0 +1,467 @@
+
+  [
+    {
+      "SupplierId": "1",
+      "SupplierName": "Supplier 1",
+      "Hotels": [
+        {
+          "Id": 1,
+          "Name": "Grand Hotel Downtown",
+          "Address": {
+            "City": "New York",
+            "Region": "NY",
+            "Country": "USA",
+            "Latitude": 40.748817,
+            "Longitude": -73.985428
+          }
+        },
+        {
+          "Id": 2,
+          "Name": "Central Plaza Suites",
+          "Address": {
+            "City": "Los Angeles",
+            "Region": "CA",
+            "Country": "USA",
+            "Latitude": 34.052235,
+            "Longitude": -118.243683
+          }
+        },
+        {
+          "Id": 3,
+          "Name": "Elegant Residency",
+          "Address": {
+            "City": "Paris",
+            "Region": "Île-de-France",
+            "Country": "France",
+            "Latitude": 48.856613,
+            "Longitude": 2.352222
+          }
+        },
+        {
+          "Id": 4,
+          "Name": "Regal Tower Hotel",
+          "Address": {
+            "City": "London",
+            "Region": "England",
+            "Country": "UK",
+            "Latitude": 51.509865,
+            "Longitude": -0.118092
+          }
+        },
+        {
+          "Id": 5,
+          "Name": "Royal Garden Hotel",
+          "Address": {
+            "City": "Miami",
+            "Region": "FL",
+            "Country": "USA",
+            "Latitude": 25.761681,
+            "Longitude": -80.191788
+          }
+        },
+        {
+          "Id": 6,
+          "Name": "Luxury Plaza Hotel",
+          "Address": {
+            "City": "Denver",
+            "Region": "CO",
+            "Country": "USA",
+            "Latitude": 39.739235,
+            "Longitude": -104.990250
+          }
+        },
+        {
+          "Id": 7,
+          "Name": "Grand View Resort",
+          "Address": {
+            "City": "Vancouver",
+            "Region": "British Columbia",
+            "Country": "Canada",
+            "Latitude": 49.282730,
+            "Longitude": -123.120735
+          }
+        },
+        {
+              "Id": 8,
+              "Name": "Elegance Suites",
+              "Address": {
+                "City": "San Francisco",
+                "Region": "CA",
+                "Country": "USA",
+                "Latitude": 37.774929,
+                "Longitude": -122.419416
+              }
+            },
+            {
+              "Id": 9,
+              "Name": "Royal Tower Inn",
+              "Address": {
+                "City": "Las Vegas",
+                "Region": "NV",
+                "Country": "USA",
+                "Latitude": 36.169941,
+                "Longitude": -115.139830
+              }
+            },
+            {
+              "Id": 10,
+              "Name": "Cityscape Hotel",
+              "Address": {
+                "City": "Sydney",
+                "Region": "New South Wales",
+                "Country": "Australia",
+                "Latitude": -33.868820,
+                "Longitude": 151.209296
+              }
+            }
+      ]
+    },
+    {
+      "SupplierId": "2",
+      "SupplierName": "Supplier 2",
+      "Hotels": [
+        {
+          "Id": 11,
+          "Name": "Grand Hotel Central",
+          "Address": {
+            "City": "New York",
+            "Region": "NY",
+            "Country": "USA",
+            "Latitude": 40.749817,
+            "Longitude": -73.984428
+          }
+        },
+        {
+          "Id": 12,
+          "Name": "Plaza Suites Central",
+          "Address": {
+            "City": "Los Angeles",
+            "Region": "CA",
+            "Country": "USA",
+            "Latitude": 34.051235,
+            "Longitude": -118.244683
+          }
+        },
+        {
+          "Id": 13,
+          "Name": "Residency Elegant",
+          "Address": {
+            "City": "Paris",
+            "Region": "Île-de-France",
+            "Country": "France",
+            "Latitude": 48.855613,
+            "Longitude": 2.351222
+          }
+        },
+        {
+          "Id": 14,
+          "Name": "Tower Hotel Regal",
+          "Address": {
+            "City": "London",
+            "Region": "England",
+            "Country": "UK",
+            "Latitude": 51.508865,
+            "Longitude": -0.119092
+          }
+        },
+        {
+          "Id": 15,
+          "Name": "Garden Hotel Royal",
+          "Address": {
+            "City": "Miami",
+            "Region": "FL",
+            "Country": "USA",
+            "Latitude": 25.762681,
+            "Longitude": -80.192788
+          }
+        },
+        {
+          "Id": 16,
+          "Name": "Plaza Hotel Luxury",
+          "Address": {
+            "City": "Denver",
+            "Region": "CO",
+            "Country": "USA",
+            "Latitude": 39.738235,
+            "Longitude": -104.989250
+          }
+        },
+        {
+          "Id": 17,
+          "Name": "View Resort Grand",
+          "Address": {
+            "City": "Vancouver",
+            "Region": "British Columbia",
+            "Country": "Canada",
+            "Latitude": 49.283730,
+            "Longitude": -123.121735
+          }
+        },
+        {
+              "Id": 18,
+              "Name": "Suites Elegance",
+              "Address": {
+                "City": "San Francisco",
+                "Region": "CA",
+                "Country": "USA",
+                "Latitude": 37.773929,
+                "Longitude": -122.420416
+              }
+            },
+            {
+              "Id": 19,
+              "Name": "Tower Inn Royal",
+              "Address": {
+                "City": "Las Vegas",
+                "Region": "NV",
+                "Country": "USA",
+                "Latitude": 36.170941,
+                "Longitude": -115.138830
+              }
+            },
+            {
+              "Id": 20,
+              "Name": "Hotel Cityscape",
+              "Address": {
+                "City": "Sydney",
+                "Region": "New South Wales",
+                "Country": "Australia",
+                "Latitude": -33.869820,
+                "Longitude": 151.208296
+              }
+            }
+      ]
+    },
+    {
+      "SupplierId": "3",
+      "SupplierName": "Supplier 3",
+      "Hotels": [
+        {
+          "Id": 21,
+          "Name": "Harmony Suites Tokyo",
+          "Address": {
+            "City": "Tokyo",
+            "Region": "Kanto",
+            "Country": "Japan",
+            "Latitude": 35.689487,
+            "Longitude": 139.691711
+          }
+        },
+        {
+          "Id": 22,
+          "Name": "Sunrise Grand Hotel Barcelona",
+          "Address": {
+            "City": "Barcelona",
+            "Region": "Catalonia",
+            "Country": "Spain",
+            "Latitude": 41.385063,
+            "Longitude": 2.173404
+          }
+        },
+        {
+          "Id": 23,
+          "Name": "Tranquil Resort Dubai",
+          "Address": {
+            "City": "Dubai",
+            "Region": "Dubai",
+            "Country": "UAE",
+            "Latitude": 25.276987,
+            "Longitude": 55.296249
+          }
+        },
+        {
+          "Id": 24,
+          "Name": "Pinnacle Tower Suites Berlin",
+          "Address": {
+            "City": "Berlin",
+            "Region": "Berlin",
+            "Country": "Germany",
+            "Latitude": 52.520008,
+            "Longitude": 13.404954
+          }
+        },
+        {
+          "Id": 25,
+          "Name": "Sapphire Gardens Hotel Rio",
+          "Address": {
+            "City": "Rio de Janeiro",
+            "Region": "State of Rio de Janeiro",
+            "Country": "Brazil",
+            "Latitude": -22.908333,
+            "Longitude": -43.196388
+          }
+        },
+        {
+          "Id": 26,
+          "Name": "Majestic Sky Seoul",
+          "Address": {
+            "City": "Seoul",
+            "Region": "Seoul",
+            "Country": "South Korea",
+            "Latitude": 37.566536,
+            "Longitude": 126.977966
+          }
+        },
+        {
+          "Id": 27,
+          "Name": "Golden Sands Resort Cancun",
+          "Address": {
+            "City": "Cancun",
+            "Region": "Quintana Roo",
+            "Country": "Mexico",
+            "Latitude": 21.161908,
+            "Longitude": -86.851528
+          }
+        },
+        {
+          "Id": 28,
+          "Name": "Cerulean Horizon Inn Amsterdam",
+          "Address": {
+            "City": "Amsterdam",
+            "Region": "North Holland",
+            "Country": "Netherlands",
+            "Latitude": 52.367573,
+            "Longitude": 4.904138
+          }
+        },
+        {
+          "Id": 29,
+          "Name": "Aurora Vista Hotel Bangkok",
+          "Address": {
+            "City": "Bangkok",
+            "Region": "Bangkok",
+            "Country": "Thailand",
+            "Latitude": 13.756331,
+            "Longitude": 100.501762
+          }
+        },
+        {
+          "Id": 30,
+          "Name": "Royal Crescent Edinburgh",
+          "Address": {
+            "City": "Edinburgh",
+            "Region": "Scotland",
+            "Country": "UK",
+            "Latitude": 55.953251,
+            "Longitude": -3.188267
+          }
+        }
+      ]
+    },
+    {
+      "SupplierId": "4",
+      "SupplierName": "Supplier 4",
+      "Hotels": [
+        {
+          "Id": 31,
+          "Name": "City Lights Shanghai Suites",
+          "Address": {
+            "City": "Shanghai",
+            "Region": "Shanghai",
+            "Country": "China",
+            "Latitude": 31.230390,
+            "Longitude": 121.473702
+          }
+        },
+        {
+          "Id": 32,
+          "Name": "Vista Mirage Rome Hotel",
+          "Address": {
+            "City": "Rome",
+            "Region": "Lazio",
+            "Country": "Italy",
+            "Latitude": 41.902782,
+            "Longitude": 12.496366
+          }
+        },
+        {
+          "Id": 33,
+          "Name": "Astral Oasis Resort Cape Town",
+          "Address": {
+            "City": "Cape Town",
+            "Region": "Western Cape",
+            "Country": "South Africa",
+            "Latitude": -33.924870,
+            "Longitude": 18.424055
+          }
+        },
+        {
+          "Id": 34,
+          "Name": "Eternal Serenity Inn Moscow",
+          "Address": {
+            "City": "Moscow",
+            "Region": "Moscow",
+            "Country": "Russia",
+            "Latitude": 55.755825,
+            "Longitude": 37.617634
+          }
+        },
+        {
+          "Id": 35,
+          "Name": "Emerald Shores Toronto Hotel",
+          "Address": {
+            "City": "Toronto",
+            "Region": "Ontario",
+            "Country": "Canada",
+            "Latitude": 43.653225,
+            "Longitude": -79.383186
+          }
+        },
+        {
+          "Id": 36,
+          "Name": "Grand Dynasty Singapore Suites",
+          "Address": {
+            "City": "Singapore",
+            "Region": "Central Region",
+            "Country": "Singapore",
+            "Latitude": 1.352083,
+            "Longitude": 103.819839
+          }
+        },
+        {
+          "Id": 37,
+          "Name": "Regent Riverside Istanbul Inn",
+          "Address": {
+            "City": "Istanbul",
+            "Region": "Marmara",
+            "Country": "Turkey",
+            "Latitude": 41.008238,
+            "Longitude": 28.978359
+          }
+        },
+        {
+          "Id": 38,
+          "Name": "Pacific Oasis Sydney Resort",
+          "Address": {
+            "City": "Sydney",
+            "Region": "New South Wales",
+            "Country": "Australia",
+            "Latitude": -33.869820,
+            "Longitude": 151.208296
+          }
+        },
+        {
+          "Id": 39,
+          "Name": "Grand Horizon San Diego Hotel",
+          "Address": {
+            "City": "San Diego",
+            "Region": "CA",
+            "Country": "USA",
+            "Latitude": 32.715736,
+            "Longitude": -117.161087
+          }
+        },
+        {
+          "Id": 40,
+          "Name": "Crystal Heights Mumbai Inn",
+          "Address": {
+            "City": "Mumbai",
+            "Region": "Maharashtra",
+            "Country": "India",
+            "Latitude": 19.076090,
+            "Longitude": 72.877426
+          }
+        }
+      ]
+    }
+  ]
