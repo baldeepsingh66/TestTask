@@ -3,12 +3,13 @@ using Newtonsoft.Json;
 using System.IO;
 using TestTask.IService;
 using TestTask.DataModel.ResponseDTO;
+using TestTask.DataModel;
 
 namespace TestTask.Service
 {
     public class HotelService : IHotelService
     {
-        public async Task<TTResponseModel<List<HotelSuplierResponse>>> GetHotelFromSuplier()
+        public async Task<TTResponseModel<List<SupplierDTO>>> GetHotelFromSuplier()
         {
             try
             {
@@ -20,15 +21,20 @@ namespace TestTask.Service
                 }
                 else
                 {
-                    return new TTResponseModel<List<HotelSuplierResponse>>() { IsSuccess = false, Data = null, Message = "File not found" };
+                    return new TTResponseModel<List<SupplierDTO>>() { IsSuccess = false, Data = null, Message = "File not found" };
                 }
-                var result= JsonConvert.DeserializeObject<List<HotelSuplierResponse>>(jsonData);
-                return new TTResponseModel<List<HotelSuplierResponse>>() { IsSuccess = true, Data = result, Message="Success" };
+                var result= JsonConvert.DeserializeObject<List<SupplierDTO>>(jsonData);
+                return new TTResponseModel<List<SupplierDTO>>() { IsSuccess = true, Data = result, Message="Success" };
             }
             catch(Exception ex)
             {
-                return new TTResponseModel<List<HotelSuplierResponse>>() { IsSuccess = false, Data = null, Message = ex.Message };
+                return new TTResponseModel<List<SupplierDTO>>() { IsSuccess = false, Data = null, Message = ex.Message };
             }
+        }
+
+        public async Task<bool> SaveData(SupplierDTO supplierDTO)
+        {
+
         }
     }
 }

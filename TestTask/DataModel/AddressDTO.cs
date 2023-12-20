@@ -1,6 +1,6 @@
 ﻿namespace TestTask.DataModel
 {
-    public class Address
+    public class AddressDTO
     {
         public int Id { get; set; }
         public string City { get; set; }

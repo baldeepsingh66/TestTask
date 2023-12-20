@@ -1,9 +1,10 @@
-﻿using TestTask.DataModel.ResponseDTO;
+﻿using TestTask.DataModel;
+using TestTask.DataModel.ResponseDTO;
 
 namespace TestTask.IService
 {
     public interface IHotelService
     {
-        Task<TTResponseModel<List<HotelSuplierResponse>>> GetHotelFromSuplier();
+        Task<TTResponseModel<List<SupplierDTO>>> GetHotelFromSuplier();
     }
 }
