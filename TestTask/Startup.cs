@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using TestTask.AutoMapper;
 using TestTask.IService;
 using TestTask.Repository;
 using TestTask.Service;
@@ -17,6 +19,11 @@ namespace TestTask
 
         public void ConfigureServices(IServiceCollection services)
         {
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new SupplierAMProfile());
+                mc.AddProfile(new HotelAMProfile());
+            });
             // Add your services here
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));

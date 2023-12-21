@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "tTjaV+zWbuJOT3KtUul+Z/aBSX3FD/4GeW8ITql3Tb7KEH790FF3yOo0yGZ/QH8c+0xBAqThCeQ+6tTzz0J0Sg==",
+  "dgSpecHash": "OxkPetBtbihhMzO2KdPCt0fh7ur4Y5XC380V2pL1mjyWXNgJGmSGYBsWIr6AZUPx+g1RSsxyflZLL1JzDgkzuw==",
   "success": true,
   "projectFilePath": "D:\\MyPracticeProject\\TestTask\\TestTask\\TestTask.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\vikyrock\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\vikyrock\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\vikyrock\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\vikyrock\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\vikyrock\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\vikyrock\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",
     "C:\\Users\\vikyrock\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.0.1\\microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
     "C:\\Users\\vikyrock\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.1\\microsoft.entityframeworkcore.7.0.1.nupkg.sha512",

@@ -4,11 +4,21 @@ using System.IO;
 using TestTask.IService;
 using TestTask.DataModel.ResponseDTO;
 using TestTask.DataModel;
+using TestTask.Model;
+using TestTask.Repository;
+using TestTask.CommonHelper;
 
 namespace TestTask.Service
 {
     public class HotelService : IHotelService
     {
+        private readonly IRepository<Hotel> _repository;
+        private readonly IAddressServices _addressServices;
+        public HotelService(IRepository<Hotel> repository, IAddressServices addressServices) 
+        {
+            _repository = repository;
+            _addressServices = addressServices;
+        }
         public async Task<TTResponseModel<List<SupplierDTO>>> GetHotelFromSuplier()
         {
             try
@@ -32,9 +42,37 @@ namespace TestTask.Service
             }
         }
 
-        public async Task<bool> SaveData(SupplierDTO supplierDTO)
+        public List<HotelDTO> GetAllHotel()
         {
-
+            var hotels= _repository.GetAll().ToList();
+            if(hotels != null && hotels.Count > 0)
+            {
+                var hotelsDTO = new List<HotelDTO>();
+                hotels.ForEach(hotel =>
+                {
+                    var hotelDTO = new HotelDTO();
+                    hotelDTO.Id = hotel.Id;
+                    hotelDTO.Name= hotel.Name;
+                    hotelDTO.Address = _addressServices.Get(hotelDTO.Id);
+                    hotelsDTO.Add(hotelDTO);
+                });
+                return hotelsDTO;
+            }
+            return null;
         }
+
+        public bool ConsolidateHotelData(int supplierId, List<HotelDTO> NewHotels, List<HotelDTO> OldHotels)
+        {
+            NewHotels.ForEach(hotel =>
+            {
+                var oldHotel = OldHotels.Where(x => Helper.AreNamesSimilar(x.Name, hotel.Name) && x.Address.GetHashCode == x.Address.GetHashCode).FirstOrDefault();
+                if (oldHotel== null)
+                {
+
+                }
+            });
+            return true;
+        }
+
     }
 }

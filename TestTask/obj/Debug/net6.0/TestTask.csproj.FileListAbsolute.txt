@@ -241,3 +241,4 @@ D:\MyPracticeProject\TestTask\TestTask\obj\Debug\net6.0\TestTask.dll
 D:\MyPracticeProject\TestTask\TestTask\obj\Debug\net6.0\refint\TestTask.dll
 D:\MyPracticeProject\TestTask\TestTask\obj\Debug\net6.0\TestTask.genruntimeconfig.cache
 D:\MyPracticeProject\TestTask\TestTask\obj\Debug\net6.0\ref\TestTask.dll
+D:\MyPracticeProject\TestTask\TestTask\bin\Debug\net6.0\AutoMapper.dll

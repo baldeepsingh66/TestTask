@@ -14,6 +14,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="DataModel\ResponseDTO\Address.cs" />
+    <Compile Remove="DataModel\ResponseDTO\Hotels.cs" />
+    <Compile Remove="DataModel\ResponseDTO\HotelSuplierResponse.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

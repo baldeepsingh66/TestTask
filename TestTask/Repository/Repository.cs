@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace TestTask.Repository
 {
@@ -43,6 +44,11 @@ namespace TestTask.Repository
         {
             _dbSet.Remove(entity);
             _context.SaveChanges();
+        }
+
+        public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> expression)
+        {
+            return _context.Set<TEntity>().Where(expression);
         }
     }
 }
