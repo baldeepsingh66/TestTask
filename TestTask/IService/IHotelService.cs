@@ -5,6 +5,8 @@ namespace TestTask.IService
 {
     public interface IHotelService
     {
-        Task<TTResponseModel<List<SupplierDTO>>> GetHotelFromSuplier();
+        List<HotelDTO> GetAllHotel();
+        bool ConsolidateHotelData(int supplierId, List<HotelDTO> NewHotels);
+
     }
 }

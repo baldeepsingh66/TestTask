@@ -7,39 +7,23 @@ using TestTask.DataModel;
 using TestTask.Model;
 using TestTask.Repository;
 using TestTask.CommonHelper;
+using AutoMapper;
 
 namespace TestTask.Service
 {
     public class HotelService : IHotelService
     {
         private readonly IRepository<Hotel> _repository;
+        private readonly IRepository<SupplierHotel> _shRepository;
+        private readonly IRepository<Address> _hRepository;
         private readonly IAddressServices _addressServices;
-        public HotelService(IRepository<Hotel> repository, IAddressServices addressServices) 
+        private readonly IMapper _mapper;
+        public HotelService(IRepository<Hotel> repository, IAddressServices addressServices, IMapper mapper, IRepository<SupplierHotel> shRepository) 
         {
             _repository = repository;
             _addressServices = addressServices;
-        }
-        public async Task<TTResponseModel<List<SupplierDTO>>> GetHotelFromSuplier()
-        {
-            try
-            {
-                string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Suplier.json");
-                string jsonData=string.Empty;
-                if (File.Exists(filePath))
-                {
-                    jsonData = File.ReadAllText(filePath);
-                }
-                else
-                {
-                    return new TTResponseModel<List<SupplierDTO>>() { IsSuccess = false, Data = null, Message = "File not found" };
-                }
-                var result= JsonConvert.DeserializeObject<List<SupplierDTO>>(jsonData);
-                return new TTResponseModel<List<SupplierDTO>>() { IsSuccess = true, Data = result, Message="Success" };
-            }
-            catch(Exception ex)
-            {
-                return new TTResponseModel<List<SupplierDTO>>() { IsSuccess = false, Data = null, Message = ex.Message };
-            }
+            _mapper = mapper;
+            _shRepository = shRepository;
         }
 
         public List<HotelDTO> GetAllHotel()
@@ -61,16 +45,37 @@ namespace TestTask.Service
             return null;
         }
 
-        public bool ConsolidateHotelData(int supplierId, List<HotelDTO> NewHotels, List<HotelDTO> OldHotels)
+        public bool ConsolidateHotelData(int supplierId, List<HotelDTO> NewHotels)
         {
-            NewHotels.ForEach(hotel =>
+            var oldHotels = GetAllHotel();
+            if (oldHotels.Any())
             {
-                var oldHotel = OldHotels.Where(x => Helper.AreNamesSimilar(x.Name, hotel.Name) && hotel.Equals(x.Address)).FirstOrDefault();
-                if (oldHotel== null)
+                NewHotels.ForEach(hotel =>
                 {
-
-                }
-            });
+                    var oldHotel = oldHotels.Where(x => Helper.AreNamesSimilar(x.Name, hotel.Name) && hotel.Address.Equals(x.Address)).FirstOrDefault();
+                    if (oldHotel == null)
+                    {
+                        var objHotel = _mapper.Map<Hotel>(hotel);
+                        _repository.Add(objHotel);
+                        _shRepository.Add(new SupplierHotel() { HotelId = objHotel.Id, SupplierId = supplierId });
+                        _addressServices.Add(objHotel.Id, hotel.Address);
+                    }
+                    else
+                    {
+                        _shRepository.Add(new SupplierHotel() { HotelId = oldHotel.Id, SupplierId = supplierId });
+                    }
+                });
+            }
+            else
+            {
+                NewHotels.ForEach(hotel =>
+                {
+                    var objHotel = _mapper.Map<Hotel>(hotel);
+                    _repository.Add(objHotel);
+                    _shRepository.Add(new SupplierHotel() { HotelId = objHotel.Id, SupplierId = supplierId });
+                    _addressServices.Add(objHotel.Id, hotel.Address);
+                });
+            }
             return true;
         }
 

@@ -6,7 +6,7 @@ namespace TestTask.Repository
     {
         TEntity GetById(int id);
         IEnumerable<TEntity> GetAll();
-        void Add(TEntity entity);
+        TEntity Add(TEntity entity);
         void Update(TEntity entity);
         void Delete(TEntity entity);
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> expression);

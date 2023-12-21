@@ -27,10 +27,11 @@ namespace TestTask.Repository
             return _dbSet.ToList();
         }
 
-        public void Add(TEntity entity)
+        public TEntity Add(TEntity entity)
         {
             _dbSet.Add(entity);
             _context.SaveChanges();
+            return entity;
         }
 
         public void Update(TEntity entity)

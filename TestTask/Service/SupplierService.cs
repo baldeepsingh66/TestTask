@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using System.Collections.Generic;
 using TestTask.DataModel;
 using TestTask.IService;
 using TestTask.Model;
@@ -34,10 +35,10 @@ namespace TestTask.Service
                     return false;
                 }
                 var supplierObject= _mapper.Map<Supplier>(suppliercDTO);
-                _repository.Add(supplierObject);
+                supplierObject= _repository.Add(supplierObject);
                 if (suppliercDTO.Hotels.Count > 0)
                 {
-
+                    _hotelService.ConsolidateHotelData(supplierObject.SupplierId, suppliercDTO.Hotels)
                 }
                 return true;    
             }

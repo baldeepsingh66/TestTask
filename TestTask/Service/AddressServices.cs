@@ -22,5 +22,13 @@ namespace TestTask.Service
             var addressDTO= _mapper.Map<AddressDTO>(address);
             return addressDTO;
         }
+
+        public bool Add(int hotelId, AddressDTO addressDTO)
+        {
+            var address= _mapper.Map<Address>(addressDTO);
+            address.HotelId = hotelId;
+            _repository.Add(address);
+            return true;
+        }
     }
 }
