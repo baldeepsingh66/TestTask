@@ -65,7 +65,7 @@ namespace TestTask.Service
         {
             NewHotels.ForEach(hotel =>
             {
-                var oldHotel = OldHotels.Where(x => Helper.AreNamesSimilar(x.Name, hotel.Name) && x.Address.GetHashCode == x.Address.GetHashCode).FirstOrDefault();
+                var oldHotel = OldHotels.Where(x => Helper.AreNamesSimilar(x.Name, hotel.Name) && hotel.Equals(x.Address)).FirstOrDefault();
                 if (oldHotel== null)
                 {
 
