@@ -7,13 +7,21 @@ namespace TestTask
 {
     public class AppDbContext : DbContext
     {
+        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<SupplierHotel> SupplierHotels { get; set; }
+        public DbSet<Hotel> Hotels { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+
+        
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
+        public AppDbContext() { }
 
-        public Supplier Suppliers { get; set; }
-        public SupplierHotel SupplierHotels { get; set; }
-        public Hotel Hotels { get; set; }
-        public Address Addresses { get; set; }
+
+        //public Supplier Suppliers { get; set; }
+        //public SupplierHotel SupplierHotels { get; set; }
+        //public Hotel Hotels { get; set; }
+        //public Address Addresses { get; set; }
     }
 }

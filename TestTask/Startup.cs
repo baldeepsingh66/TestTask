@@ -25,10 +25,9 @@ namespace TestTask
                 mc.AddProfile(new HotelAMProfile());
             });
             // Add your services here
-            services.AddDbContext<AppDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            services.AddScoped<IHotelService, HotelService>();
+            services.AddDbContext<TestTask.AppDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -55,6 +54,11 @@ namespace TestTask
                 new string[]{}
                 }});
             });
+
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<IHotelService, HotelService>();
+            services.AddScoped<ISupplierService, SupplierService>();
+            services.AddScoped<IAddressServices, AddressServices>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -75,8 +79,8 @@ namespace TestTask
                 .WithOrigins(origins)
                 .AllowAnyMethod()
                 .AllowAnyHeader());
-            app.UseAuthentication();
-            app.UseAuthorization();
+            //app.UseAuthentication();
+            //app.UseAuthorization();
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 

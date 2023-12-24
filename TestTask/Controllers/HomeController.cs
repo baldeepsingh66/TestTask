@@ -8,14 +8,17 @@ namespace TestTask.Controllers
     public class HomeController : Controller
     {
         private readonly IHotelService _hotelService;
-        public HomeController(IHotelService hotelService) {
+        private readonly ISupplierService _supplierService;
+        public HomeController(IHotelService hotelService, ISupplierService supplierService)
+        {
             _hotelService = hotelService;
+            _supplierService = supplierService;
         }
 
         [HttpGet("GetAllSuplier")]
         public async Task<IActionResult> GetAllSuplier()
         {
-            return Ok(await _hotelService.GetHotelFromSuplier());
+            return Ok(_supplierService.GetHotelFromSuplier());
         }
     }
 }

@@ -5,7 +5,8 @@ namespace TestTask.IService
 {
     public interface ISupplierService
     {
-        Task<TTResponseModel<List<SupplierDTO>>> GetHotelFromSuplier();
-
+        TTResponseModel<List<SupplierDTO>> GetHotelFromSuplier();
+        bool SaveSuppliers(List<SupplierDTO> supplierDTOs);
+        bool CreateSupplier(SupplierDTO suppliercDTO);
     }
 }
