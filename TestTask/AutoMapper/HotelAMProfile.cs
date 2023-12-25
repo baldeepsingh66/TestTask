@@ -8,7 +8,7 @@ namespace TestTask.AutoMapper
     {
         public HotelAMProfile()
         {
-            CreateMap<Hotel, HotelDTO>();
+            CreateMap<HotelDTO,Hotel>().ForMember(z=>z.Id, opt=>opt.Ignore());
         }
     }
 }

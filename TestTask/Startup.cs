@@ -23,7 +23,9 @@ namespace TestTask
             {
                 mc.AddProfile(new SupplierAMProfile());
                 mc.AddProfile(new HotelAMProfile());
+                mc.AddProfile(new AddressAMProfile());
             });
+            IMapper mapper = mapperConfig.CreateMapper();
             // Add your services here
             services.AddDbContext<TestTask.AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("Default")));
@@ -54,7 +56,7 @@ namespace TestTask
                 new string[]{}
                 }});
             });
-
+            services.AddSingleton(mapper);
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IHotelService, HotelService>();
             services.AddScoped<ISupplierService, SupplierService>();

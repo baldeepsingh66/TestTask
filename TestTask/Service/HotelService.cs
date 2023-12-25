@@ -29,9 +29,10 @@ namespace TestTask.Service
         public List<HotelDTO> GetAllHotel()
         {
             var hotels= _repository.GetAll().ToList();
-            if(hotels != null && hotels.Count > 0)
+            var hotelsDTO = new List<HotelDTO>();
+
+            if (hotels != null && hotels.Count > 0)
             {
-                var hotelsDTO = new List<HotelDTO>();
                 hotels.ForEach(hotel =>
                 {
                     var hotelDTO = new HotelDTO();
@@ -42,7 +43,7 @@ namespace TestTask.Service
                 });
                 return hotelsDTO;
             }
-            return null;
+            return hotelsDTO;
         }
 
         public bool ConsolidateHotelData(int supplierId, List<HotelDTO> NewHotels)
@@ -52,7 +53,7 @@ namespace TestTask.Service
             {
                 NewHotels.ForEach(hotel =>
                 {
-                    var oldHotel = oldHotels.Where(x => Helper.AreNamesSimilar(x.Name, hotel.Name) && hotel.Address.Equals(x.Address)).FirstOrDefault();
+                    var oldHotel = oldHotels.Where(x => Helper.AreNamesSimilar(x.Name, hotel.Name) || Helper.ObjectsAreEqual<AddressDTO>(hotel.Address,x.Address)).FirstOrDefault();
                     if (oldHotel == null)
                     {
                         var objHotel = _mapper.Map<Hotel>(hotel);
@@ -62,7 +63,9 @@ namespace TestTask.Service
                     }
                     else
                     {
-                        _shRepository.Add(new SupplierHotel() { HotelId = oldHotel.Id, SupplierId = supplierId });
+                        var objHotelSupplier = _shRepository.Find(x => x.SupplierId == supplierId && x.HotelId == oldHotel.Id).FirstOrDefault();
+                        if (objHotelSupplier == null)
+                            _shRepository.Add(new SupplierHotel() { HotelId = oldHotel.Id, SupplierId = supplierId });
                     }
                 });
             }

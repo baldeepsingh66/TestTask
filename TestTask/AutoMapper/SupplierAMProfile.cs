@@ -9,7 +9,7 @@ namespace TestTask.AutoMapper
     {
         public SupplierAMProfile()
         {
-            CreateMap<SupplierDTO, Supplier>();
+            CreateMap<SupplierDTO, Supplier>().ForMember(z => z.SupplierId, opt => opt.Ignore());
         }
     }
 }

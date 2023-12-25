@@ -17,11 +17,5 @@ namespace TestTask
         {
         }
         public AppDbContext() { }
-
-
-        //public Supplier Suppliers { get; set; }
-        //public SupplierHotel SupplierHotels { get; set; }
-        //public Hotel Hotels { get; set; }
-        //public Address Addresses { get; set; }
     }
 }

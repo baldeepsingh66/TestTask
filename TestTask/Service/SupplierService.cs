@@ -39,6 +39,7 @@ namespace TestTask.Service
                 }
 
                 var result = JsonConvert.DeserializeObject<List<SupplierDTO>>(jsonData);
+                SaveSuppliers(result);
                 return new TTResponseModel<List<SupplierDTO>>() { IsSuccess = true, Data = result, Message = "Success" };
             }
             catch (Exception ex)
@@ -69,7 +70,11 @@ namespace TestTask.Service
                 var supplier = _repository.Find(x => x.SupplierName == suppliercDTO.SupplierName).FirstOrDefault();
                 if (supplier != null)
                 {
-                    return false;
+                    if (suppliercDTO.Hotels.Count > 0)
+                    {
+                        var result = _hotelService.ConsolidateHotelData(supplier.SupplierId, suppliercDTO.Hotels);
+                    }
+                    return true;
                 }
                 var supplierObject= _mapper.Map<Supplier>(suppliercDTO);
                 supplierObject= _repository.Add(supplierObject);
